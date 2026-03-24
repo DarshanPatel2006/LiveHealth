@@ -1,0 +1,197 @@
+{
+    "Fungal infection": {
+      "description": "A fungal infection affecting the skin causing itching and irritation.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Allergy": {
+      "description": "An immune system reaction to allergens like dust or pollen.",
+      "severity": "low",
+      "doctor_required": false
+    },
+    "GERD": {
+      "description": "Acid reflux causing heartburn and discomfort.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Chronic cholestasis": {
+      "description": "A liver condition causing bile flow blockage.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Drug Reaction": {
+      "description": "Adverse reaction to medication.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Peptic ulcer disease": {
+      "description": "Sores in the stomach lining causing pain.",
+      "severity": "medium",
+      "doctor_required": true
+    },
+    "AIDS": {
+      "description": "A chronic immune system condition caused by HIV.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Diabetes": {
+      "description": "A condition affecting blood sugar regulation.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Gastroenteritis": {
+      "description": "Inflammation of stomach causing diarrhea and vomiting.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Bronchial Asthma": {
+      "description": "Respiratory condition causing breathing difficulty.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Hypertension": {
+      "description": "High blood pressure condition.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Migraine": {
+      "description": "Severe headache often with nausea and sensitivity to light.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Cervical spondylosis": {
+      "description": "Neck pain due to aging-related wear and tear.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Paralysis (brain hemorrhage)": {
+      "description": "Loss of muscle function due to brain damage.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Jaundice": {
+      "description": "Yellowing of skin due to liver issues.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Malaria": {
+      "description": "Mosquito-borne disease causing fever and chills.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Chicken pox": {
+      "description": "Viral infection causing itchy skin rash.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Dengue": {
+      "description": "Mosquito-borne viral infection causing high fever.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Typhoid": {
+      "description": "Bacterial infection causing prolonged fever.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Hepatitis A": {
+      "description": "Liver infection caused by virus.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Hepatitis B": {
+      "description": "Serious liver infection caused by virus.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Hepatitis C": {
+      "description": "Chronic liver infection.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Hepatitis D": {
+      "description": "Severe liver infection requiring medical care.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Hepatitis E": {
+      "description": "Liver infection usually spread via contaminated water.",
+      "severity": "medium",
+      "doctor_required": true
+    },
+    "Alcoholic hepatitis": {
+      "description": "Liver inflammation due to alcohol consumption.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Tuberculosis": {
+      "description": "Serious lung infection caused by bacteria.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Common Cold": {
+      "description": "Mild viral infection affecting nose and throat.",
+      "severity": "low",
+      "doctor_required": false
+    },
+    "Pneumonia": {
+      "description": "Lung infection causing breathing difficulty.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Dimorphic hemorrhoids(piles)": {
+      "description": "Swollen veins in lower rectum.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Heart attack": {
+      "description": "Blocked blood flow to heart.",
+      "severity": "critical",
+      "doctor_required": true
+    },
+    "Varicose veins": {
+      "description": "Enlarged twisted veins.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Hypothyroidism": {
+      "description": "Low thyroid hormone levels.",
+      "severity": "medium",
+      "doctor_required": true
+    },
+    "Hyperthyroidism": {
+      "description": "Excess thyroid hormone production.",
+      "severity": "medium",
+      "doctor_required": true
+    },
+    "Hypoglycemia": {
+      "description": "Low blood sugar levels.",
+      "severity": "high",
+      "doctor_required": true
+    },
+    "Osteoarthritis": {
+      "description": "Joint pain due to wear and tear.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Arthritis": {
+      "description": "Inflammation of joints causing pain.",
+      "severity": "medium",
+      "doctor_required": false
+    },
+    "Acne": {
+      "description": "Skin condition causing pimples.",
+      "severity": "low",
+      "doctor_required": false
+    },
+    "Urinary tract infection": {
+      "description": "Infection in urinary system.",
+      "severity": "medium",
+      "doctor_required": true
+    },
+    "Psoriasis": {
+      "description": "Chronic skin condition causing scaling.",
+      "severity": "medium",
+      "doctor_required": true
+    }
+  }

@@ -1,0 +1,17 @@
+{
+    "Fungal infection": {
+      "allopathy": "Antifungal creams like clotrimazole",
+      "homeopathy": "Tellurium or Sepia",
+      "diet": "Avoid sugar, maintain hygiene"
+    },
+    "Allergy": {
+      "allopathy": "Antihistamines like cetirizine",
+      "homeopathy": "Allium cepa",
+      "diet": "Avoid allergens, eat vitamin C rich food"
+    },
+    "Diabetes": {
+      "allopathy": "Metformin, insulin therapy",
+      "homeopathy": "Syzygium jambolanum",
+      "diet": "Low sugar, high fiber diet"
+    }
+  }
