@@ -19,7 +19,7 @@ import os
 from rest_framework.decorators import api_view
 from django.http import JsonResponse
 
-from ml.predictor import predict
+
 from utils.symptom_encoder import encode
 
 from utils.report_generator import generate_report
@@ -41,6 +41,7 @@ model = joblib.load(model_path)
 
 @api_view(['POST'])
 def predict_disease(request):
+    from ml.predictor import predict
     try:
         symptoms = request.data.get('symptoms', [])
 
