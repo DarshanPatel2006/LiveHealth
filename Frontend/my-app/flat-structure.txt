@@ -1,0 +1,5 @@
+ls my-app/node_modules/ | grep -E "bootstrap|@mui|@chakra-ui|antd"
+
+cat my-app/package.json | grep -E "bootstrap|@mui|@chakra-ui|antd|react-router-dom|axios|socket.io-client|formik|yup"
+
+grep -E "import 'bootstrap/dist/css/bootstrap.min.css'" my-app/src/index.js my-app/src/App.js

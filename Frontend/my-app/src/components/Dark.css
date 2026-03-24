@@ -1,0 +1,21 @@
+body.dark-mode, .dark-mode .container, .dark-mode .bg-white, .dark-mode .bg-light {
+    background: #181c24 !important;
+    color: #e0e6ed !important;
+  }
+  .dark-mode .card, .dark-mode .bg-white, .dark-mode .bg-light {
+    background: #232a36 !important;
+    color: #e0e6ed !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.4) !important;
+  }
+  .dark-mode .navbar, .dark-mode .footer {
+    background: #232a36 !important;
+  }
+  .dark-mode .btn, .dark-mode .btn-outline-primary, .dark-mode .btn-primary {
+    color: #e0e6ed !important;
+  }
+  .dark-mode .nav-link, .dark-mode .navbar-brand {
+    color: #e0e6ed !important;
+  }
+  .dark-mode .table {
+    color: #e0e6ed !important;
+  }

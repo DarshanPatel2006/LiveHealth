@@ -1,0 +1,103 @@
+REACT PROJECT COMMANDS
+=====================
+
+1. INSTALLATION COMMANDS
+-----------------------
+# Install all dependencies
+npm install
+
+# Install Bootstrap
+npm install bootstrap
+npm install react-bootstrap
+
+# Install specific packages
+npm install chart.js react-chartjs-2
+npm install @mui/material @emotion/react @emotion/styled
+npm install react-router-dom
+npm install axios
+npm install formik yup
+npm install react-icons
+npm install socket.io-client
+
+2. DEVELOPMENT COMMANDS
+----------------------
+# Start development server
+npm start
+
+# Build for production
+npm run build
+
+# Run tests
+npm test
+
+# Run tests in watch mode
+npm test -- --watch
+
+# Eject from create-react-app
+npm run eject
+
+3. BUILD AND DEPLOY COMMANDS
+--------------------------
+# Create production build
+npm run build
+
+# Serve production build
+serve -s build
+
+4. CLEANING COMMANDS
+------------------
+# Clear npm cache
+npm cache clean --force
+
+# Remove node_modules and reinstall
+rm -rf node_modules
+npm install
+
+5. GIT COMMANDS
+-------------
+# Initialize git
+git init
+
+# Add files
+git add .
+
+# Commit changes
+git commit -m "your message"
+
+# Push changes
+git push origin main
+
+6. PORT COMMANDS
+--------------
+# Kill port 3000 if in use
+npx kill-port 3000
+
+7. ENVIRONMENT COMMANDS
+---------------------
+# Create .env file
+echo "REACT_APP_API_URL=your_api_url" > .env
+
+8. DEPENDENCY COMMANDS
+--------------------
+# Update dependencies
+npm update
+
+# Check outdated packages
+npm outdated
+
+# Remove unused packages
+npm prune
+
+9. BOOTSTRAP COMMANDS
+-------------------
+# Install Bootstrap
+npm install bootstrap
+
+# Install React Bootstrap
+npm install react-bootstrap
+
+# Import Bootstrap CSS in index.js or App.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+# Import Bootstrap JS (if needed)
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 

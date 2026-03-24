@@ -1,0 +1,31 @@
+# REACT PROJECT DIAGNOSIS COMMANDS
+# ==============================
+
+# 1. CHECK INSTALLED DEPENDENCIES
+# This command lists common UI libraries and essential packages installed in node_modules.
+ls my-app/node_modules/ | grep -E "bootstrap|@mui|@chakra-ui|antd|react-router-dom|axios|socket.io-client|formik|yup|react-icons|framer-motion"
+
+# 2. CHECK package.json FOR DECLARED DEPENDENCIES
+# This shows the dependencies listed in your project's package.json.
+cat my-app/package.json | grep -E "bootstrap|@mui|@chakra-ui|antd|react-router-dom|axios|socket.io-client|formik|yup|react-icons|framer-motion|prop-types|dotenv|chart.js|react-chartjs-2"
+
+# 3. CHECK FOR BOOTSTRAP CSS IMPORT IN index.js or App.js
+# This verifies if the Bootstrap CSS is being imported in your main React files.
+grep -E "import 'bootstrap/dist/css/bootstrap.min.css'" my-app/src/index.js my-app/src/App.js
+
+# 4. CHECK FOR CUSTOM CSS IMPORTS IN index.js or App.js
+# This confirms if your custom App.css and index.css are correctly referenced.
+grep -E "import './App.css'|import './index.css'" my-app/src/index.js my-app/src/App.js
+
+# 5. CHECK IF ALL DEPENDENCIES ARE INSTALLED (DRY RUN)
+# This command will tell you if there are any missing dependencies without installing them.
+npm install --dry-run
+
+# 6. CHECK FOR MISSING GITIGNORE ENTRIES
+# This checks if common build/env files are ignored by Git.
+cat my-app/.gitignore | grep -E "node_modules|.env|build|.DS_Store"
+
+# 7. CHECK NODE AND NPM VERSIONS
+# Ensure Node.js and npm are installed and at compatible versions.
+node -v
+npm -v 
