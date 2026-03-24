@@ -29,9 +29,19 @@ from utils.treatment_engine import get_treatment
 # ================== 🔥 MONGODB CONNECTION (ONLY CHANGE) ==================
 MONGO_URI = "mongodb+srv://campustalk2026_db_user:XfC92GTFkXnLB4Ra@jeevixacluster.3rndwwv.mongodb.net/jeevixa?retryWrites=true&w=majority"
 
-client = MongoClient(MONGO_URI)
+client = MongoClient(
+    MONGO_URI,
+    serverSelectionTimeoutMS=5000,  # 5 sec max
+    connectTimeoutMS=5000,
+    socketTimeoutMS=5000
+)
 db = client["jeevixa"]
 # =======================================================================
+try:
+    client.server_info()
+    print("Mongo Connected ✅")
+except Exception as e:
+    print("Mongo Failed ❌", e)
 
 # Load the model once globally
 model_path = os.path.join(os.path.dirname(__file__), 'trained_model.joblib')
@@ -131,8 +141,11 @@ def signup_view(request):
                     'address': data.get('address'),
                     'medicalHistory': data.get('medicalHistory')
                 })
-
-            users.insert_one(user_data)
+            # users.insert_one(user_data)
+            try:
+                users.insert_one(user_data)
+            except Exception as e:
+                print("Mongo Error:", e)
 
             response = JsonResponse({'message': 'Signup successful'}, status=201)
             response["Access-Control-Allow-Origin"] = "*"
