@@ -9,12 +9,14 @@ import img from "../assets/weather.jpg";
 import BASE_URL from "../config";
 
 
+
 function MedicalNews() {
   const [news, setNews] = useState([]);
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const location = useLocation();
+  const [active, setActive] = useState("all");
 
   const { darkMode } = useDarkMode();
 
@@ -127,100 +129,99 @@ function MedicalNews() {
     ? news
     : news.filter(n => n.category === selectedCategory);
 
-  return (
-    <>
-      {location.pathname.includes("/doctor") ? (
-        <NavbarDoctor />
-      ) : (
-        <NavbarPatient />
-      )}
-
-      <div className="pd2-container mt-5">
-
-        {/* 🔥 TITLE */}
-        <h1 className="pd2-title p-2">Medical News & Insights</h1>
-
-        {/* 🔥 WEATHER CARD */}
-        {weather && (
-          <div className="pd2-main-card ">
-
-            {/* LEFT TEXT */}
-            <div className="pd2-main-text">
-              <h2>Weather & Health</h2>
-
-              <p>Temperature: {weather.temp}°C</p>
-              <p>Humidity: {weather.humidity}%</p>
-
-              <p>
-                Stay hydrated, avoid extreme heat exposure,
-                and maintain a healthy routine.
-              </p>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="pd2-main-img">
-              <img
-                src={img}
-                alt="Weather"
-              />
-            </div>
-
-          </div>
+    return (
+      <>
+        {location.pathname.includes("/doctor") ? (
+          <NavbarDoctor />
+        ) : (
+          <NavbarPatient />
         )}
-        {/* 🔥 CATEGORY */}
-        <div className="pd2-info-grid">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              className="pd2-btn"
-              onClick={() => setSelectedCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* 🔥 NEWS CARDS */}
-        <div className="appt-grid">
-
-          {loading ? (
-            <p>Loading...</p>
-          ) : (
-            filteredNews.map(article => (
-              <div className="pd2-card">
-
-                <img
-                  src={article.image}
-                  alt=""
-                  style={{
-                    width: "100%",
-                    height: "160px",
-                    objectFit: "cover",
-                    borderRadius: "12px"
-                  }}
-                />
-
-                <span className="pd2-tag">{article.category}</span>
-
-                <h3>{article.title}</h3>
-
-                <p>{article.summary}</p>
-
-                <div style={{ fontSize: "12px", color: "#94a3b8" }}>
-                  {article.source} • {article.date}
-                </div>
-
+    
+        <div className="pd2-container mt-5">
+    
+          {/* TITLE */}
+          <h1 className="pd2-title p-2">Medical News & Insights</h1>
+    
+          {/* WEATHER */}
+          {weather && (
+            <div className="pd2-main-card">
+    
+              <div className="pd2-main-text">
+                <h2>Weather & Health</h2>
+    
+                <p>Temperature: {weather.temp}°C</p>
+                <p>Humidity: {weather.humidity}%</p>
+    
+                <p>
+                  Stay hydrated, avoid extreme heat exposure,
+                  and maintain a healthy routine.
+                </p>
               </div>
-            ))
+    
+              <div className="pd2-main-img">
+                <img src={img} alt="Weather" />
+              </div>
+    
+            </div>
           )}
-
+    
+          {/* 🔥 FILTER BUTTONS (ENHANCED) */}
+          <div className="news-filters">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                className={active === cat ? "active" : ""}
+                onClick={() => {
+                  setActive(cat);
+                  setSelectedCategory(cat);
+                }}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+    
+          {/* NEWS */}
+          <div className="appt-grid">
+    
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              filteredNews.map(article => (
+                <div className="pd2-card" key={article.id}>
+    
+                  <img
+                    src={article.image}
+                    alt=""
+                    style={{
+                      width: "100%",
+                      height: "160px",
+                      objectFit: "cover",
+                      borderRadius: "12px"
+                    }}
+                  />
+    
+                  <span className="pd2-tag">{article.category}</span>
+    
+                  <h3>{article.title}</h3>
+    
+                  <p>{article.summary}</p>
+    
+                  <div style={{ fontSize: "12px", color: "#94a3b8" }}>
+                    {article.source} • {article.date}
+                  </div>
+    
+                </div>
+              ))
+            )}
+    
+          </div>
+    
         </div>
-
-      </div>
-
-      <Footer />
-    </>
-  );
+    
+        <Footer />
+      </>
+    );
 }
 
 export default MedicalNews;

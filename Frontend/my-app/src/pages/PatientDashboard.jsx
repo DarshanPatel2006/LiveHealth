@@ -5,14 +5,16 @@ import "../App.css";
 import img from "../assets/ai-health.jpg";
 import BASE_URL from "../config";
 
+import { useNavigate } from "react-router-dom";
 
 function PatientDashboard() {
+  const navigate = useNavigate();
   return (
     <>
       <NavbarPatient />
       <h1 className="pd2-title mt-5 pt-5 px-5">
-  Patient Dashboard
-</h1>
+        Patient Dashboard
+      </h1>
       <div className="pd2-container">
 
         {/* 🔥 AI DIAGNOSIS (FULL WIDTH) */}
@@ -99,8 +101,11 @@ function PatientDashboard() {
             <h3>Doctor Network</h3>
           </div>
 
-          <div className="pd2-team-card highlight">
-            <h3>Explore More →</h3>
+          <div
+            className="pd2-team-card highlight"
+            onClick={() => navigate("/disease-select")}
+          >
+            <h3>🔍 Explore Diagnosis →</h3>
           </div>
 
         </div>

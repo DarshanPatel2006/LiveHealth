@@ -3,23 +3,21 @@ import NavbarDoctor from "../components/NavbarDoctor";
 import Footer from "../components/Footer";
 import "../App.css";
 import img from "../assets/ai-health.jpg";
-import BASE_URL from "../config";
-
 
 function DoctorDashboard() {
   return (
     <>
       <NavbarDoctor />
+
+      {/* ✅ SINGLE CONTAINER */}
       <div className="pd2-container">
-      <h1 className="pd2-title mt-5 ">
-  Doctor Dashboard
-</h1>
 
-</div>
+        {/* TITLE */}
+        <h1 className="pd2-title" style={{ marginTop: "100px" }}>
+          Doctor Dashboard
+        </h1>
 
-      <div className="pd2-container ">
-
-        {/* 🔥 MAIN CARD (LIKE PATIENT) */}
+        {/* MAIN CARD */}
         <div className="pd2-main-card">
           <div className="pd2-main-text">
             <span className="pd2-tag">Doctor Panel</span>
@@ -48,66 +46,53 @@ function DoctorDashboard() {
           </div>
         </div>
 
-        {/* 🔥 TWO CARDS (SAME AS PATIENT STRUCTURE) */}
+        {/* GRID */}
         <div className="pd2-grid">
 
-          {/* APPOINTMENTS */}
           <div className="pd2-card">
             <span className="pd2-tag">Appointments</span>
-
             <h2>Patient Requests</h2>
-
-            <p>
-              View, accept or reject patient bookings and send responses directly.
-            </p>
+            <p>View, accept or reject patient bookings.</p>
 
             <ul className="pd2-list">
-              <li>✔ View all incoming patient requests</li>
-              <li>✔ Accept or reject appointments instantly</li>
-              <li>✔ Send feedback or instructions to patients</li>
-              <li>✔ Track appointment history and status</li>
+              <li>✔ View all incoming requests</li>
+              <li>✔ Accept or reject instantly</li>
+              <li>✔ Track appointment status</li>
             </ul>
 
-            <a href="/Appointment-doctor">Open →</a>
+            <a href="/Appointment-doctor" className="pd2-link">Open →</a>
           </div>
 
-          {/* DISEASE POST */}
           <div className="pd2-card">
             <span className="pd2-tag">Medical Content</span>
-
             <h2>Disease Recommendations</h2>
 
-            <p>
-              Add verified disease information to educate and guide patients.
-            </p>
+            <p>Add verified disease info for patients.</p>
 
             <ul className="pd2-list">
-              <li>✔ Publish verified disease information</li>
-              <li>✔ Add symptoms, causes, and descriptions</li>
-              <li>✔ Help patients understand conditions better</li>
-              <li>✔ Build trust through expert knowledge</li>
+              <li>✔ Publish disease info</li>
+              <li>✔ Add symptoms & causes</li>
+              <li>✔ Help patients understand</li>
             </ul>
 
-            <a href="/disease-post">Post →</a>
+            <a href="/disease-post" className="pd2-link">Post →</a>
           </div>
 
         </div>
 
-        {/* 🔥 INFO STRIP */}
+        {/* INFO */}
         <div className="pd2-info">
           <h2>Doctor Capabilities</h2>
 
           <div className="pd2-info-grid">
-            <div>✔ Manage and respond to patient appointments</div>
-            <div>✔ Provide expert medical recommendations</div>
-            <div>✔ Help patients understand diseases better</div>
-            <div>✔ Improve healthcare communication</div>
-            <div>✔ Build a digital medical presence</div>
-            <div>✔ Deliver faster and better patient care</div>
+            <div>✔ Manage appointments</div>
+            <div>✔ Provide recommendations</div>
+            <div>✔ Improve communication</div>
+            <div>✔ Deliver better care</div>
           </div>
         </div>
 
-        {/* 🔥 TEAM STYLE (OPTIONAL SAME AS PATIENT) */}
+        {/* TEAM */}
         <div className="pd2-team">
 
           <div className="pd2-team-card">

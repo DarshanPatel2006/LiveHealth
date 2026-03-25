@@ -8,14 +8,12 @@ function Footer() {
 
       <div className="footer2-inner">
 
-        {/* LEFT */}
-        <div className="footer2-brand">
+        <div className="footer2-brand pd2-title">
           Jeevixa
         </div>
 
-        {/* CENTER */}
-        <div className="footer2-copy">
-          © {new Date().getFullYear()} Jeevixa
+        <div className="footer-year">
+          © 2026 Jeevixa
         </div>
 
         {/* RIGHT */}
