@@ -22,6 +22,7 @@ const SignupForm = () => {
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const [doctorKey, setDoctorKey] = useState('');
 
   const regexValidators = {
     name: /^[a-zA-Z\s]{3,50}$/, // letters only, 3-50 chars
@@ -40,6 +41,11 @@ const SignupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
+    const SECRET_KEY = "Jeevixa@45"; // tu change kar lena
+
+    if (role === 'doctor' && doctorKey !== SECRET_KEY) {
+      newErrors.doctorKey = "Invalid Doctor Access Key";
+    }
 
     if (!regexValidators.name.test(formData.name)) newErrors.name = 'Valid name (letters only, min 3 chars)';
     if (!regexValidators.email.test(formData.email)) newErrors.email = 'Enter a valid email';
@@ -125,39 +131,39 @@ const SignupForm = () => {
             {role === 'doctor' && (
               <>
                 <div className="col-md-6 mb-3">
-  <label className="form-label">Specialization</label>
-  <select
-    className="form-select"
-    name="specialization"
-    value={formData.specialization}
-    onChange={handleChange}
-    required
-  >
-    <option value="">-- Select Specialization --</option>
+                  <label className="form-label">Specialization</label>
+                  <select
+                    className="form-select"
+                    name="specialization"
+                    value={formData.specialization}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">-- Select Specialization --</option>
 
-    <optgroup
-      label="Available Specializations"
-      style={{ maxHeight: '150px', overflowY: 'auto' }} // Won't work in native select
-    >
-      <option value="Cardiologist">Cardiologist</option>
-      <option value="Dermatologist">Dermatologist</option>
-      <option value="Endocrinologist">Endocrinologist</option>
-      <option value="Gastroenterologist">Gastroenterologist</option>
-      <option value="Neurologist">Neurologist</option>
-      <option value="Oncologist">Oncologist</option>
-      <option value="Orthopedic">Orthopedic</option>
-      <option value="Pediatrician">Pediatrician</option>
-      <option value="Psychiatrist">Psychiatrist</option>
-      <option value="Radiologist">Radiologist</option>
-      <option value="Urologist">Urologist</option>
-      <option value="General Physician">General Physician</option>
-      <option value="ENT Specialist">ENT Specialist</option>
-      <option value="Dentist">Dentist</option>
-      <option value="Ophthalmologist">Ophthalmologist</option>
-      {/* Add more */}
-    </optgroup>
-  </select>
-</div>
+                    <optgroup
+                      label="Available Specializations"
+                      style={{ maxHeight: '150px', overflowY: 'auto' }} // Won't work in native select
+                    >
+                      <option value="Cardiologist">Cardiologist</option>
+                      <option value="Dermatologist">Dermatologist</option>
+                      <option value="Endocrinologist">Endocrinologist</option>
+                      <option value="Gastroenterologist">Gastroenterologist</option>
+                      <option value="Neurologist">Neurologist</option>
+                      <option value="Oncologist">Oncologist</option>
+                      <option value="Orthopedic">Orthopedic</option>
+                      <option value="Pediatrician">Pediatrician</option>
+                      <option value="Psychiatrist">Psychiatrist</option>
+                      <option value="Radiologist">Radiologist</option>
+                      <option value="Urologist">Urologist</option>
+                      <option value="General Physician">General Physician</option>
+                      <option value="ENT Specialist">ENT Specialist</option>
+                      <option value="Dentist">Dentist</option>
+                      <option value="Ophthalmologist">Ophthalmologist</option>
+                      {/* Add more */}
+                    </optgroup>
+                  </select>
+                </div>
 
 
                 <div className="col-md-6 mb-3">
@@ -174,6 +180,18 @@ const SignupForm = () => {
                 <div className="col-md-6 mb-3">
                   <label className="form-label">Qualification</label>
                   <input type="text" className="form-control" name="qualification" value={formData.qualification} onChange={handleChange} required />
+                </div>
+
+                <div className="col-md-6 mb-3">
+                  <label className="form-label">Doctor Access Key</label>
+                  <input
+                    type="password"
+                    className={`form-control ${errors.doctorKey ? 'is-invalid' : ''}`}
+                    value={doctorKey}
+                    onChange={(e) => setDoctorKey(e.target.value)}
+                    required
+                  />
+                  {errors.doctorKey && <div className="invalid-feedback">{errors.doctorKey}</div>}
                 </div>
               </>
             )}

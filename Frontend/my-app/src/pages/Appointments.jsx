@@ -34,16 +34,58 @@ function Appointments() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await fetch(`${BASE_URL}/appointments/`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    });
-
-    fetchData();
+  
+    // ✅ Empty check
+    if (!form.doctor || !form.date || !form.time || !form.reason) {
+      alert("⚠️ Please fill all fields");
+      return;
+    }
+  
+    // ✅ Date validation (no past date)
+    const selectedDate = new Date(form.date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+  
+    if (selectedDate < today) {
+      alert("❌ Past date allowed nahi hai");
+      return;
+    }
+  
+    // ✅ Time validation (8 AM to 10 PM)
+    const [hour] = form.time.split(":").map(Number);
+  
+    if (hour < 8 || hour > 22) {
+      alert("⏰ Appointment time 8 AM se 10 PM ke beech hona chahiye");
+      return;
+    }
+  
+    try {
+      const response = await fetch(`${BASE_URL}/appointments/`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert("✅ Appointment booked successfully!");
+        setForm({
+          patient: localStorage.getItem('email') || '',
+          doctor: '',
+          date: '',
+          time: '',
+          reason: '',
+        });
+        fetchData();
+      } else {
+        alert(data.message || "❌ Failed to book appointment");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("🚫 Server error");
+    }
   };
-
   return (
     <>
       <NavbarPatient />
@@ -86,12 +128,15 @@ function Appointments() {
 
           <input
             type="date"
+            min={new Date().toISOString().split("T")[0]}
             value={form.date}
             onChange={(e) => setForm({ ...form, date: e.target.value })}
           />
 
           <input
             type="time"
+            min="08:00"
+            max="22:00"
             value={form.time}
             onChange={(e) => setForm({ ...form, time: e.target.value })}
           />
